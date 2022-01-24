@@ -1,3 +1,7 @@
+
+var score = document.getElementById('Score');
+var score_value = 0;
+
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 
@@ -83,6 +87,10 @@ function loop() {
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
+      
+      score_value++;
+      
+      score.innerText = "score: " + score_value;
 
       // canvas is 400x400 which is 25x25 grids 
       apple.x = getRandomInt(0, 25) * grid;
