@@ -2,6 +2,21 @@
 var score = document.getElementById('Score');
 var score_value = 0;
 
+function restart() {
+  var score_value = 0;
+  score.innerText = "score: " + score_value;
+  
+  snake.x = 160;
+  snake.y = 160;
+  snake.cells = [];
+  snake.maxCells = 4;
+  snake.dx = grid;
+  snake.dy = 0;
+  
+  apple.x = getRandomInt(0, 25) * grid;
+  apple.y = getRandomInt(0, 25) * grid;
+}
+
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 
@@ -51,18 +66,18 @@ function loop() {
 
   // wrap snake position horizontally on edge of screen
   if (snake.x < 0) {
-    snake.x = canvas.width - grid;
+    restart();
   }
   else if (snake.x >= canvas.width) {
-    snake.x = 0;
+    restart();
   }
   
   // wrap snake position vertically on edge of screen
   if (snake.y < 0) {
-    snake.y = canvas.height - grid;
+    restart();
   }
   else if (snake.y >= canvas.height) {
-    snake.y = 0;
+    restart();
   }
 
   // keep track of where snake has been. front of the array is always the head
@@ -102,15 +117,7 @@ function loop() {
       
       // snake occupies same space as a body part. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        snake.x = 160;
-        snake.y = 160;
-        snake.cells = [];
-        snake.maxCells = 4;
-        snake.dx = grid;
-        snake.dy = 0;
-
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
+        restart()
       }
     }
   });
