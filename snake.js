@@ -3,8 +3,7 @@ var score = document.getElementById('Score');
 var score_value = 0;
 
 function restart() {
-  var score_value = 0;
-  score.innerText = "score: " + score_value;
+  location.reload()
   
   snake.x = 160;
   snake.y = 160;
