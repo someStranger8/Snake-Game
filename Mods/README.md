@@ -9,6 +9,6 @@ javascript:var score_value = 999999;
 ```
 
 or one that makes you invincible:
-```
+```javascript
 javascript:function restart() {}
 ```
