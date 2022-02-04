@@ -11,3 +11,4 @@ link to original code and creater: ***[here](https://gist.github.com/ZiKT1229/59
 
 TODO:
 - [ ] make pause screen
+- [X] github pages
