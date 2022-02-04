@@ -2,6 +2,12 @@
 var score = document.getElementById('Score');
 var score_value = 0;
 
+// easter egg
+function random() {
+  var list = ["https://piv.pivpiv.dk","https://www.youtube.com/watch?v=dQw4w9WgXcQ"];
+  window.location.href = list[Math.floor(Math.random()*list.length)];
+}
+
 function restart() {
   location.reload()
   
