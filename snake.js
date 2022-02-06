@@ -4,7 +4,7 @@ var score_value = 0;
 
 // easter egg
 function random() {
-  var list = ["https://piv.pivpiv.dk","https://www.youtube.com/watch?v=dQw4w9WgXcQ"];
+  var list = ["https://piv.pivpiv.dk","https://www.youtube.com/watch?v=dQw4w9WgXcQ","https://www.youtube.com/watch?v=FtE6SV_1wu4"];
   window.location.href = list[Math.floor(Math.random()*list.length)];
 }
 
